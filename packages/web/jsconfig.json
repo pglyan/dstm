@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "paths": {
+      "#/*": ["./src/*"]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ]
+  },
+  "include": ["src"]
+}

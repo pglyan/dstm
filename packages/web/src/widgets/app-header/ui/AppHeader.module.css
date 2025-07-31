@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--mod) * 2);
+}
+
+
+.link {
+  padding: var(--mod);
+  color: black;
+}
+
+.link:hover {
+  background-color: lavender;
+}
