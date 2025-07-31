@@ -1,9 +1,24 @@
-import Koa from 'koa'
+import { createApp } from './app.js'
+import { connectToDatabase } from './db/connection.js'
+import { runDatabaseMigrations } from './db/migrate.js'
 
-const app = new Koa()
+const dbPath = process.env.DB_PATH || ':memory:'
+const port = process.env.PORT || 3000
 
-app.use(async (ctx) => {
-  ctx.body = 'Tank!'
-})
+async function start() {
+  try {
+    const db = connectToDatabase(dbPath)
+    await runDatabaseMigrations(db)
 
-app.listen(3000)
+    const app = createApp(db)
+
+    app.listen(port, () => {
+      console.log(`Server is running on http://localhost:${port}`)
+    })
+  } catch (error) {
+    console.error('Error starting the application:', error)
+    process.exit(1)
+  }
+}
+
+start()
