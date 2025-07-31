@@ -14,7 +14,7 @@ export function App() {
         <div className={styles.header}>
           <AppHeader />
         </div>
-        <main className={styles.main}>
+        <div className={styles.container}>
           <ErrorBoundary>
             <Router>
               <Route path="/" component={NowPage} />
@@ -23,7 +23,7 @@ export function App() {
               <Route default component={NotFoundPage} />
             </Router>
           </ErrorBoundary>
-        </main>
+        </div>
       </div>
     </LocationProvider>
   )

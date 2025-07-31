@@ -1,6 +1,8 @@
 .root {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -11,9 +13,10 @@
   padding-inline: calc(var(--mod) * 4);
   padding-block: var(--mod);
   background-color: aliceblue;
+  border-block-end: 1px solid lightgray;
 }
 
 
-.main {
-  padding: var(--mod);
+.container {
+  flex: 1;
 }

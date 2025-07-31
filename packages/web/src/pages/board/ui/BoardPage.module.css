@@ -1,1 +1,19 @@
-.page {}
+.page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+
+.sidebar {
+  flex: 1;
+  border-inline-end: 1px solid lightgrey;
+  padding: calc(var(--mod) * 6);
+}
+
+
+.content {
+  flex: 4;
+  padding: calc(var(--mod) * 6);
+  overflow: auto;
+}
