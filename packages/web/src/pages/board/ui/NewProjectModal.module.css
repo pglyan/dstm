@@ -9,3 +9,15 @@
   border: 1px solid lightgray;
   border-radius: var(--mod);
 }
+
+.form {}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--mod);
+}
+
+.close {}
+.submit {}
