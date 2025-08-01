@@ -1,9 +1,10 @@
-import { UserController } from './user.controller.js'
-import { UserRepository } from './user.repository.js'
-import { createUserRouter } from './user.router.js'
-import { UserService } from './user.service.js'
+import type { Database } from 'better-sqlite3'
+import { UserController } from './user.controller.ts'
+import { UserRepository } from './user.repository.ts'
+import { createUserRouter } from './user.router.ts'
+import { UserService } from './user.service.ts'
 
-export function createUserModule(db) {
+export function createUserModule(db: Database) {
   const userRepository = new UserRepository(db)
   const userService = new UserService(userRepository)
   const userController = new UserController(userService)

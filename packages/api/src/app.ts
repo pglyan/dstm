@@ -1,11 +1,12 @@
 import Koa from 'koa'
 import Router from '@koa/router'
+import type { Database } from 'better-sqlite3'
 import { bodyParser } from '@koa/bodyparser'
-import { createUserModule } from './modules/user/index.js'
+import { createUserModule } from './modules/user/index.ts'
 import { createQuestModule } from './modules/quest/index.js'
-import { createTaskModule } from './modules/task/index.js'
+import { createTaskModule } from './modules/task/index.ts'
 
-export function createApp(db) {
+export function createApp(db: Database): Koa {
   const app = new Koa()
 
   app.use(bodyParser())
