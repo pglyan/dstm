@@ -2,6 +2,7 @@ import Koa from 'koa'
 import Router from '@koa/router'
 import { bodyParser } from '@koa/bodyparser'
 import { createUserModule } from './modules/user/index.js'
+import { createQuestModule } from './modules/quest/index.js'
 import { createTaskModule } from './modules/task/index.js'
 
 export function createApp(db) {
@@ -12,12 +13,19 @@ export function createApp(db) {
   const appRouterV1 = new Router({ prefix: '/api/v1' })
 
   const userModule = createUserModule(db)
+  const questModule = createQuestModule(db)
   const taskModule = createTaskModule(db)
 
   appRouterV1.use(
     '/users',
     userModule.userRouter.routes(),
     userModule.userRouter.allowedMethods()
+  )
+
+  appRouterV1.use(
+    '/quests',
+    questModule.questRouter.routes(),
+    questModule.questRouter.allowedMethods()
   )
 
   appRouterV1.use(
