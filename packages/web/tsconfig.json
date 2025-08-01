@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "paths": {
+      "#/*": ["./src/*"]
+    },
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ]
+  },
+  "include": ["src"]
+}
