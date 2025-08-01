@@ -1,8 +1,8 @@
 import { useState } from 'preact/hooks'
 import { Modal } from '#/shared/ui'
-import styles from './NewProjectModal.module.css'
+import styles from './NewQuestModal.module.css'
 
-export function NewProjectModal() {
+export function NewQuestModal() {
   const [show, setShow] = useState(false)
 
   const open = () => setShow(true)

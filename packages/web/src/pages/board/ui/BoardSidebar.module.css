@@ -1,20 +1,20 @@
 .root {}
 
 
-.projects {
+.quests {
   display: flex;
   flex-direction: column;
   gap: var(--mod);
 }
 
-.projectsHeader {
+.questsHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.projectsAction {}
+.questsAction {}
 
-.projectsList {}
+.questList {}
 
-.projectsLink {}
+.questLink {}

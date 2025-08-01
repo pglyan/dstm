@@ -18,7 +18,7 @@ export function App() {
           <ErrorBoundary>
             <Router>
               <Route path="/" component={NowPage} />
-              <Route path="/board" component={BoardPage} />
+              <Route path="/board/*" component={BoardPage} />
               <Route path="/me" component={MePage} />
               <Route default component={NotFoundPage} />
             </Router>

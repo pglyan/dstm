@@ -2,7 +2,7 @@ import styles from './AppHeader.module.css'
 
 const navLinks = [
   { to: '/', text: 'now' },
-  { to: '/board', text: 'board' },
+  { to: '/board/latest', text: 'board' },
   { to: '/me', text: 'me' }
 ]
 

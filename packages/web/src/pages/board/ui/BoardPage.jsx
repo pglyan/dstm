@@ -1,14 +1,20 @@
-import { BoardPageSidebar } from './BoardPageSidebar'
+import { Router, Route } from 'preact-iso'
+import { BoardSidebar } from './BoardSidebar'
+import { LatestQuests } from './LatestQuests'
+import { QuestView } from './QuestView'
 import styles from './BoardPage.module.css'
 
 export function BoardPage() {
   return (
     <div class={styles.page}>
       <div class={styles.sidebar}>
-        <BoardPageSidebar />
+        <BoardSidebar />
       </div>
       <main class={styles.content}>
-        <h1>Welcome to the Board Page</h1>
+        <Router>
+          <Route path="/latest" component={LatestQuests} />
+          <Route path='/quest/:questId' component={QuestView} />
+        </Router>
       </main>
     </div>
   )
