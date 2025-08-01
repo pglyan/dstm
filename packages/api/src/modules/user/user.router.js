@@ -1,10 +1,10 @@
 import Router from '@koa/router'
 
-export function createUsersRouter(usersController) {
+export function createUserRouter(userController) {
   const router = new Router()
 
   router.get('/', (ctx) => {
-    ctx.body = usersController.getUsers()
+    ctx.body = userController.getUsers()
   })
 
   return router

@@ -1,10 +1,10 @@
 import Router from '@koa/router'
 
-export function createTasksRouter(tasksController) {
+export function createTaskRouter(taskController) {
   const router = new Router()
 
   router.get('/', (ctx) => {
-    ctx.body = tasksController.getTasks()
+    ctx.body = taskController.getTasks()
   })
 
   return router

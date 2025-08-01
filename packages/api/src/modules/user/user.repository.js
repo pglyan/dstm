@@ -1,4 +1,4 @@
-export class UsersRepository {
+export class UserRepository {
   constructor(db) {
     this.db = db
   }
